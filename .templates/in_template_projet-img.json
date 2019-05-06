@@ -1,0 +1,85 @@
+
+            "img{i}Separator": {{
+                "condition": "img{i}Title.value"
+            }},
+            "img{i}Title": {{
+                "text": "{nth(i)} Image",
+                "type": "bool",
+                "value": false
+            }},
+            "img{i}Enable": {{
+                "text": "Enable",
+                "type": "bool",
+                "value": true,
+                "condition": "img{i}Title.value"
+            }},
+            "img{i}Image": {{
+                "text": "Image",
+                "type": "combo",
+                "options": [
+                    {{ "value": "amara",  "label": "Amara" }},
+                    {{ "value": "angel",  "label": "Angel" }},
+                    {{ "value": "gaige",  "label": "Gaige" }},
+                    {{ "value": "lilith", "label": "Lilith" }},
+                    {{ "value": "maya",   "label": "Maya" }},
+                    {{ "value": "moxxi",  "label": "Moxxi" }},
+                    {{ "value": "moze",   "label": "Moze" }},
+                    {{ "value": "tina",   "label": "Tina" }}
+                ],
+                "value": "{image_value(i)}",
+                "condition": "img{i}Title.value"
+            }},
+            "img{i}ColumnStart": {{
+                "text": "Start Column",
+                "type": "slider",
+                "min": 1,
+                "max": 20,
+                "editable": false,
+                "value": {i},
+                "condition": "img{i}Title.value"
+            }},
+            "img{i}ColumnEnd": {{
+                "text": "End Column",
+                "type": "slider",
+                "min": 1,
+                "max": 20,
+                "editable": false,
+                "value": {i},
+                "condition": "img{i}Title.value"
+            }},
+            "img{i}RowStart": {{
+                "text": "Start Row",
+                "type": "slider",
+                "min": 1,
+                "max": 20,
+                "editable": false,
+                "value": 1,
+                "condition": "img{i}Title.value"
+            }},
+            "img{i}RowEnd": {{
+                "text": "End Row",
+                "type": "slider",
+                "min": 1,
+                "max": 20,
+                "editable": false,
+                "value": 1,
+                "condition": "img{i}Title.value"
+            }},
+            "img{i}HorizontalPosition": {{
+                "text": "Horizontal Position",
+                "type": "slider",
+                "min": 0,
+                "max": 100,
+                "editable": false,
+                "value": 50,
+                "condition": "img{i}Title.value"
+            }},
+            "img{i}VerticalPosition": {{
+                "text": "Vertical Position",
+                "type": "slider",
+                "min": 0,
+                "max": 100,
+                "editable": false,
+                "value": 0,
+                "condition": "img{i}Title.value"
+            }}

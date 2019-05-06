@@ -1,0 +1,77 @@
+.we-aside {
+    position: absolute;
+    top: 0;
+    max-width: calc(50% - 0.75em);
+    max-height: calc(100% - 1em);
+    margin: 0.5em;
+    font-family: sans-serif;
+    color: white;
+    background: #333b;
+    overflow: auto;
+    text-shadow: 0 0 5px black;
+}
+
+body.we-reset-font-size .we-aside {
+    font-size: 1.6rem;
+}
+
+.we-aside:not(.right) {
+    left: 0;
+}
+.we-aside.right {
+    right: 0;
+    visibility: hidden;
+}
+
+.we-aside > * {
+    display: block;
+    margin: 0.5em;
+}
+
+.we-aside h2 {
+    font-family: monospace;
+    font-weight: normal;
+    font-size: 1em;
+}
+
+.we-aside.hidden > *:not(h2) {
+    display: none !important;
+}
+
+.we-aside .toggle-aside {
+    cursor: pointer;
+    background: #c00;
+    user-select: none;
+}
+.we-aside.hidden .toggle-aside {
+    background: #0c0;
+}
+
+.we-aside #wallpaper-properties {
+    display: table;
+}
+
+.we-aside #wallpaper-properties > label {
+    display: table-row;
+    margin: 1em 2em;
+    font-size: 0.8em;
+}
+
+.we-aside #wallpaper-properties > label > * {
+    display: table-cell;
+    max-width: 20em;
+    vertical-align: middle;
+}
+
+.we-aside #wallpaper-properties > label > *:first-child {
+    padding: 0.5em 1em 0.5em 0;
+}
+
+.we-aside input[type="number"] {
+    width: 4em;
+}
+
+.we-aside span.button {
+    background: #00c;
+    cursor: pointer;
+}

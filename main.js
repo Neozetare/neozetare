@@ -20,7 +20,6 @@ window.wallpaperPropertyListener = {
 
         if (properties.numberColumns)
             $("main").css("grid-template-columns", "repeat(" + values.numberColumns + ", 1fr)")
-
         if (properties.numberRows)
             $("main").css("grid-template-rows", "repeat(" + values.numberRows + ", 1fr)")
 
@@ -31,29 +30,31 @@ window.wallpaperPropertyListener = {
             $("main").css("grid-gap", values.gridGap + "px");
             $("main").css("gap", values.gridGap + "px");
 
-        if (properties.img1Enable) {
-            if (values.img1Enable)
-                $(".image:nth-child(1)").removeClass("hidden");
-            else
-                $(".image:nth-child(1)").addClass("hidden");
+        for (let i = 1; i <= 10; i++) {
+            if (properties["img" + i + "Enable"]) {
+                if (values["img" + i + "Enable"])
+                    $(".image:nth-child(" + i + ")").removeClass("hidden");
+                else
+                    $(".image:nth-child(" + i + ")").addClass("hidden");
+            }
+
+            if (properties["img" + i + "Image"])
+                $(".image:nth-child(" + i + ")").css("background-image", "url('images/" + values["img" + i + "Image"] + ".jpg')");
+
+            if (properties["img" + i + "ColumnStart"])
+                $(".image:nth-child(" + i + ")").css("grid-column-start", "" + values["img" + i + "ColumnStart"]);
+            if (properties["img" + i + "ColumnEnd"])
+                $(".image:nth-child(" + i + ")").css("grid-column-end", "" + (values["img" + i + "ColumnEnd"] + 1));
+
+            if (properties["img" + i + "RowStart"])
+                $(".image:nth-child(" + i + ")").css("grid-row-start", "" + values["img" + i + "RowStart"]);
+            if (properties["img" + i + "RowEnd"])
+                $(".image:nth-child(" + i + ")").css("grid-row-end", "" + (values["img" + i + "RowEnd"] + 1));
+
+            if (properties["img" + i + "HorizontalPosition"])
+                $(".image:nth-child(" + i + ")").css("background-position-x", values["img" + i + "HorizontalPosition"] + "%");
+            if (properties["img" + i + "VerticalPosition"])
+                $(".image:nth-child(" + i + ")").css("background-position-y", values["img" + i + "VerticalPosition"] + "%");
         }
-
-        if (properties.img1Image)
-            $(".image:nth-child(1)").css("background-image", "url('images/" + values.img1Image + ".jpg')");
-
-        if (properties.img1ColumnStart)
-            $(".image:nth-child(1)").css("grid-column-start", "" + values.img1ColumnStart);
-        if (properties.img1ColumnEnd)
-            $(".image:nth-child(1)").css("grid-column-end", "" + (values.img1ColumnEnd + 1));
-
-        if (properties.img1RowStart)
-            $(".image:nth-child(1)").css("grid-row-start", "" + values.img1RowStart);
-        if (properties.img1RowEnd)
-            $(".image:nth-child(1)").css("grid-row-end", "" + (values.img1RowEnd + 1));
-
-        if (properties.img1HorizontalPosition)
-            $(".image:nth-child(1)").css("background-position-x", values.img1HorizontalPosition + "%");
-        if (properties.img1VerticalPosition)
-            $(".image:nth-child(1)").css("background-position-y", values.img1VerticalPosition + "%");
     }
 }
